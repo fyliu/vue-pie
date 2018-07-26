@@ -2,6 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import Chartkick from 'chartkick'
+import VueChartkick from 'vue-chartkick'
+import Chart from 'chart.js'
 
 Vue.config.productionTip = false
 
@@ -11,3 +14,4 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+Vue.use(VueChartkick, { Chartkick })
