@@ -1,10 +1,24 @@
 <template>
   <div class="hello">
-    <pie-chart :data="chartDataPie"></pie-chart>
+    <pie-chart :data="categoryData"></pie-chart>
     <!--<line-chart :data="chartData"></line-chart>-->
     <hr>
     <div>
+      {{ categoryData }}
+      <br>
       Chart Name: <input type="text" v-model="chartName">
+    </div>
+    <div>
+      Category: <input type="text" v-model="category_1_name">
+      Percentage: <input type="text" v-model="category_1_value"><br>
+      Category: <input type="text" v-model="category_2_name">
+      Percentage: <input type="text" v-model="category_2_value"><br>
+      Category: <input type="text" v-model="category_3_name">
+      Percentage: <input type="text" v-model="category_3_value"><br>
+      Category: <input type="text" v-model="category_4_name">
+      Percentage: <input type="text" v-model="category_4_value"><br>
+      Category: <input type="text" v-model="category_5_name">
+      Percentage: <input type="text" v-model="category_5_value">
     </div>
     <div v-if="chartName">
       <ul>
@@ -43,21 +57,31 @@ export default {
   data () {
     return {
       chartName: '',
-      category_1_name: 'blueberry',
+      category_1_name: 'Blueberry',
       category_1_value: '44',
-      category_2_name: '',
-      category_2_value: '',
-      category_3_name: '',
+      category_2_name: 'Strawberry',
+      category_2_value: '56',
+      category_3_name: 'Banana',
       category_3_value: '',
-      category_4_name: '',
+      category_4_name: 'Orange',
       category_4_value: '',
-      category_5_name: '',
+      category_5_name: 'Pineapple',
       category_5_value: '',
-      chartData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
+      //chartData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
       //chartDataPie: [['Blueberry', 44], ['Strawberry', 23]]
-      chartDataPie: {'Blueberry': 44, 'Strawberry': 23}
+      //chartDataPie: {'Blueberry': 44, 'Strawberry': 23}
     }
-  }
+  },
+  computed: {
+    categoryData: function() {
+      //return {'Blueberry': 44, 'Strawberry': 23}
+      return { [this.category_1_name] : this.category_1_value,
+        [this.category_2_name] : this.category_2_value ,
+        [this.category_3_name] : this.category_3_value ,
+        [this.category_4_name] : this.category_4_value ,
+        [this.category_5_name] : this.category_5_value }
+      }
+    }
 }
 </script>
 
