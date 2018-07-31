@@ -1,4 +1,4 @@
-# awesome-chartkick
+# vue-pie
 
 > A Vue.js project
 
