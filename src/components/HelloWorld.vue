@@ -35,17 +35,6 @@
         Input Value <span v-text="d[1]"></span>
       </div>
     </div>
-    <!--
-    <div>
-      <input type="text" v-model="d[1]">
-    </div>
-    <div>
-      <input type="text" v-model="d[1]">
-    </div>
-    <div>
-      <input type="text" v-model="d[1]">
-    </div>
-    -->
   </div>
 </template>
 
